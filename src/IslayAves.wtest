@@ -1,0 +1,41 @@
+import AlgunaAves.*
+import Islas.*
+/*Armar un test con el siguiente escenario inicial
+- crear un aguilucho colorado, un albatros y una paloma torcaza. Después, hacer que el albatros vaya al gimnasio.
+- crear una isla, y agregar a las tres aves.*/
+
+test "Islas y Aves" {
+	var aguiluchoColorado = new AguiluchoColorado()
+	var albatros = new Albatro()
+	var palomaTorcaza = new PalomaTorcaza()
+	var isla = new Isla()
+	
+	albatros.irAlGimnasio()
+	isla.obtecionDeAves(albatros)
+	isla.obtecionDeAves(palomaTorcaza)
+	isla.obtecionDeAves(aguiluchoColorado)
+	
+	assert.equals(580,aguiluchoColorado.fuerza())
+	assert.equals(1100,albatros.fuerza())
+	assert.equals(700,palomaTorcaza.fuerza())
+	assert.equals(4500,albatros.peso())
+	assert.equals(2380,isla.fuerzaTotal())
+	//assert.equals(aguiluchoColorado,palomaTorcaza,isla.avesDebiles())
+	
+	isla.terremoto()
+	assert.equals(40,aguiluchoColorado.velocidad())
+	assert.equals(5300,albatros.peso())
+	assert.equals(500,palomaTorcaza.ira())
+	
+	assert.equals(580,aguiluchoColorado.fuerza())
+	assert.equals(1100,albatros.fuerza())
+	assert.equals(1400,palomaTorcaza.fuerza())
+	//assert.equals(aguiluchoColorado,isla.avesDebiles())
+	
+	isla.tormenta()
+	assert.equals(80,aguiluchoColorado.velocidad())
+	assert.equals(640,aguiluchoColorado.fuerza())
+	assert.equals(5300,albatros.peso())
+	assert.equals(500,palomaTorcaza.ira())
+	
+}
