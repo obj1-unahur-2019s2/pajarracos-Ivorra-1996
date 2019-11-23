@@ -96,12 +96,31 @@ class PalomaMontera inherits Paloma {
 	}
 }
 class PalomaManchada inherits Paloma {
-	var property nidos 
-	const property grosor = 5
-	const property resistencia = 3
-	
-	override method recibeUnDisgusto(){
-		return nidos += 1 
+const property nidos = #{}
+
+	override method recibeUnDisgusto() {
+		super()
+		nidos.add(self.construirNido()) 
 	}
-	override method seRelaja(){}
+	method construirNido() {
+		return new Nido()
+	}
+	override method seRelaje() {
+		if (nidos.size() > 2) {
+			nidos.forEach{n => n.grosor(+1)}
+		} else {
+			super()
+		}
+	}
+	override method ira() {
+		return super() + nidos.sum{n => n.potencia()}
+	}	
+}
+
+class Nido {
+var property grosor = 5
+// puse un const porque en  ningun momento cambia la resistencia , solo el grosor cambia.
+const property resistencia = 3
+
+	method potencia() = (grosor * resistencia) + 20
 }

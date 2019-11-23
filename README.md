@@ -148,5 +148,8 @@ Una paloma manchada nace sin ningún nido.
 
 Cuando _recibe un disgusto_, además de lo que hacen todas las palomas, una paloma manchada construye un nuevo nido.
  
-Cuando _se relaja_ hace lo mismo que cualquier otra paloma, excepto si tiene más de 2 nidos, en cuyo caso aumenta el grosor de todos los que tenga en 1 unidad.  
-A la _ira_, sumarle la suma de la potencia de todos sus nidos. La potencia de un nido se obtiene multiplicando grosor por resistencia, y sumando 20 al resultado. P.ej. la potencia de un nido con 5 de grosor y 3 de resistencia es de 35.
+Cuando _se relaja_ hace lo mismo que cualquier otra paloma, excepto si tiene más de 2 nidos, en cuyo caso aumenta 
+el grosor de todos los que tenga en 1 unidad.  
+A la _ira_, sumarle la suma de la potencia de todos sus nidos. 
+La potencia de un nido se obtiene multiplicando grosor por resistencia,
+y sumando 20 al resultado. P.ej. la potencia de un nido con 5 de grosor y 3 de resistencia es de 35.
